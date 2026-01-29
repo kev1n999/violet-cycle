@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import { Particles } from "../components/ui/particles";
 
 const poppinsFont = Poppins({
-  weight: ["400", "700"], 
-  subsets: ["latin"], 
-  display: "swap", 
-  variable: "--font-poppins", 
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
@@ -21,11 +22,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${poppinsFont.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <Particles className="bg-violet-200">
+        <body className={`${poppinsFont.variable} antialiased`}>
+          {children}
+        </body>
+      </Particles>
     </html>
   );
 }
