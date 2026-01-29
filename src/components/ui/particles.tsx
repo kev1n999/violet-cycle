@@ -96,7 +96,7 @@ export const Particles: React.FC<ParticlesProps> = ({
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [color]);
+  }, [color]);c
 
   useEffect(() => {
     onMouseMove();

@@ -10,7 +10,7 @@ const poppinsFont = Poppins({
 
 export default function Main() {
   return (
-    <div className="grid grid-cols-2 place-content-center items-center gap-14">
+    <div className="grid grid-cols-2 place-content-center items-center ">
       <div className="flex justify-center pt-10">
         <img src={example.src} alt="" className="rounded-full h-120" />
       </div>
@@ -21,7 +21,8 @@ export default function Main() {
         >
           Violet Cycle
         </h1>
-        <p className="text-violet-300 text-3xl">
+
+        <p className="relative left-10 text-violet-300 text-2xl w-2xl leading-tight">
           A simple app to get your menstrual cycle
         </p>
 

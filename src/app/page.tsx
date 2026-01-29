@@ -1,5 +1,6 @@
 import NavBar from "../components/home/NavBar";
 import Main from "../components/home/Main";
+import Footer from "../components/home/Footer";
 
 export default function App() {
   return (
@@ -14,6 +15,10 @@ export default function App() {
           <div className="h-0.5 bg-violet-300 w-dvh"></div>
         </div>
       </main>
+
+      <footer className="flex justify-center items-center">
+        <Footer />
+      </footer>
     </div>
   );
 }
