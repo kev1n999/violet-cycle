@@ -1,12 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
-
-interface LinkProps {
-  href: string;
-  name: string;
-}
+import { NavLink } from "../NavLink";
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
@@ -45,18 +40,5 @@ export default function NavBar() {
         </ul>
       )}
     </nav>
-  );
-}
-
-function NavLink({ href, name }: LinkProps) {
-  return (
-    <li>
-      <Link
-        href={href}
-        className="block w-full text-white transition-all duration-200 hover:text-violet-200 text-center"
-      >
-        {name}
-      </Link>
-    </li>
   );
 }
