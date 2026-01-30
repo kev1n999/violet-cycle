@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import { Particles } from "../components/ui/particles";
+import { ThemeModeScript } from "flowbite-react";
 
 const poppinsFont = Poppins({
   weight: ["400", "700"],
@@ -12,21 +12,20 @@ const poppinsFont = Poppins({
 
 export const metadata: Metadata = {
   title: "Violet Cycle",
-  description: "A simple app to tracker the your menstrual cycle",
+  description: "A simple app to track your menstrual cycle",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <Particles className="bg-violet-200">
-        <body className={`${poppinsFont.variable} antialiased`}>
-          {children}
-        </body>
-      </Particles>
+    <html lang="en" suppressHydrationWarning>
+      <ThemeModeScript />
+      <body className={`${poppinsFont.variable} antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }

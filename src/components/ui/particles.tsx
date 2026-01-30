@@ -2,7 +2,7 @@
 
 import type React from "react";
 import { useEffect, useRef, useState } from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/src/lib/utils";
 
 interface MousePosition {
   x: number;
@@ -96,7 +96,7 @@ export const Particles: React.FC<ParticlesProps> = ({
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [color]);c
+  }, [color]);
 
   useEffect(() => {
     onMouseMove();
