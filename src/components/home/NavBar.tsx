@@ -1,45 +1,62 @@
-import Link from "next/link";
+"use client";
 
-// interface NavProps {}
+import Link from "next/link";
+import { useState } from "react";
+
+interface LinkProps {
+  href: string;
+  name: string;
+}
 
 export default function NavBar() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <nav className="flex justify-between bg-violet-300 min-w-6xl h-14 mt-3 rounded-2xl items-center px-6">
-      <div className="flex items-center">
-        <img src="/main_logo.png" alt="Logo" className="h-16 w-auto" />
-        <h1 className="text-white relative bottom-1 text-2xl font-extrabold right-5">
+    <nav className="relative flex justify-between items-center bg-violet-300 h-14 mt-3 rounded-2xl w-full lg:max-w-6xl lg:mx-auto px-4 sm:px-6">
+      <div className="flex items-center gap-2">
+        <img src="/main_logo.png" alt="Logo" className="h-10 sm:h-16 w-auto" />
+        <h1 className="text-white relative right-3 text-lg sm:text-2xl font-extrabold">
           Violet Cycle
         </h1>
       </div>
 
-      <ul className="flex justify-between gap-6">
-        <li>
-          <Link
-            href="/"
-            className="text-white transition-all duration-200 hover:text-violet-200"
-          >
-            Home
-          </Link>
-        </li>
+      {/* Mobile button */}
+      <button
+        className="sm:hidden text-white text-2xl"
+        onClick={() => setOpen(!open)}
+        aria-label="Abrir menu"
+      >
+        ☰
+      </button>
 
-        <li>
-          <Link
-            href="/contacts"
-            className="text-white transition-all duration-200 hover:text-violet-200"
-          >
-            Contacts
-          </Link>
-        </li>
-
-        <li>
-          <Link
-            href="/dashboard"
-            className="text-white transition-all duration-200 hover:text-violet-200"
-          >
-            Dashboard
-          </Link>
-        </li>
+      {/* Menu desktop */}
+      <ul className="hidden sm:flex gap-6">
+        <NavLink href="/" name="Home" />
+        <NavLink href="/contacts" name="Contacts" />
+        <NavLink href="/dashboard" name="Dashboard" />
       </ul>
+
+      {/* Menu mobile */}
+      {open && (
+        <ul className="sm:hidden absolute top-full mt-2 right-2 rounded-2xl w-45 bg-violet-300 shadow-md border-t border-violet-400 flex flex-col gap-3 p-4">
+          <NavLink href="/" name="Home" />
+          <NavLink href="/contacts" name="Contacts" />
+          <NavLink href="/dashboard" name="Dashboard" />
+        </ul>
+      )}
     </nav>
+  );
+}
+
+function NavLink({ href, name }: LinkProps) {
+  return (
+    <li>
+      <Link
+        href={href}
+        className="block w-full text-white transition-all duration-200 hover:text-violet-200 text-center"
+      >
+        {name}
+      </Link>
+    </li>
   );
 }

@@ -27,7 +27,7 @@ export default function Main() {
         </p>
 
         <div className="relative left-[25%]">
-          <button className="bg-violet-600 w-50 h-12 rounded-3xl text-white cursor-pointer transition-all duration-200 hover:bg-violet-500">
+          <button className="bg-violet-600 w-50 h-12 rounded-[10px] text-white cursor-pointer transition-all duration-200 hover:bg-violet-500">
             Start now
           </button>
         </div>
