@@ -7,6 +7,9 @@ export default function NavBar() {
     <nav className="flex justify-between bg-violet-300 min-w-6xl h-14 mt-3 rounded-2xl items-center px-6">
       <div className="flex items-center">
         <img src="/main_logo.png" alt="Logo" className="h-16 w-auto" />
+        <h1 className="text-white relative bottom-1 text-2xl font-extrabold right-5">
+          Violet Cycle
+        </h1>
       </div>
 
       <ul className="flex justify-between gap-6">
