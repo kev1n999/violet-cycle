@@ -13,7 +13,7 @@ export default function App() {
 
         <main>
           <Main />
-          <div className="flex justify-center">
+          <div className="hidden md:flex justify-center">
             <div className="h-0.5 bg-violet-300 w-dvh"></div>
           </div>
         </main>

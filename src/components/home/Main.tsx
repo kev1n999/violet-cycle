@@ -10,24 +10,28 @@ const poppinsFont = Poppins({
 
 export default function Main() {
   return (
-    <div className="grid grid-cols-2 place-content-center items-center ">
-      <div className="flex justify-center pt-10">
-        <img src={example.src} alt="" className="rounded-full h-120" />
+    <div className="grid grid-cols-1 md:grid-cols-2 items-center px-6 md:px-0">
+      <div className="flex justify-center py-10">
+        <img
+          src={example.src}
+          alt=""
+          className="h-64 md:h-96 lg:h-[32rem] rounded-full"
+        />
       </div>
 
-      <div className="flex justify-center flex-col gap-3.5">
+      <div className="flex flex-col gap-4 text-center md:text-left">
         <h1
-          className={`${poppinsFont.variable} text-violet-500 font-extrabold text-6xl relative left-20`}
+          className={`${poppinsFont.variable} text-violet-500 font-extrabold text-4xl md:text-6xl`}
         >
           Violet Cycle
         </h1>
 
-        <p className="relative left-10 text-violet-300 text-2xl w-2xl leading-tight">
+        <p className="text-violet-300 text-lg md:text-2xl max-w-xl">
           A simple app to get your menstrual cycle
         </p>
 
-        <div className="relative left-[25%]">
-          <button className="bg-violet-600 w-50 h-12 rounded-[10px] text-white cursor-pointer transition-all duration-200 hover:bg-violet-500">
+        <div className="flex justify-center md:justify-start">
+          <button className="bg-violet-600 w-40 md:w-50 h-12 rounded-[10px] text-white transition-colors hover:bg-violet-500">
             Start now
           </button>
         </div>
