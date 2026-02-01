@@ -26,12 +26,12 @@ export default function Main() {
           Violet Cycle
         </h1>
 
-        <p className="text-violet-300 text-lg md:text-2xl max-w-xl">
+        <p className="text-violet-300 text-lg md:text-2xl max-w-xl md:relative left-10">
           A simple app to get your menstrual cycle
         </p>
 
         <div className="flex justify-center md:justify-start">
-          <button className="bg-violet-600 w-40 md:w-50 h-12 rounded-[10px] text-white transition-colors hover:bg-violet-500">
+          <button className="cursor-pointer bg-violet-600 w-40 md:w-50 h-12 rounded-[10px] text-white transition-colors hover:bg-violet-500">
             Start now
           </button>
         </div>

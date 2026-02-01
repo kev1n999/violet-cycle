@@ -1,44 +1,23 @@
-import Link from "next/link";
+import { NavLink } from "../NavLink";
 
 export default function Footer() {
   return (
-    <div className="flex justify-between gap-5 w-7xl mt-20 bg-violet-300 items-center p-5">
+    <div className="flex flex-col mt-20 md:m-10 md:flex-row justify-between items-center gap-5 w-full max-w-7xl mx-auto py-6 px-4 bg-violet-300">
       <div>
-        <h1 className="text-white text-2xl font-extrabold">
+        <h1 className="text-white text-2xl font-extrabold text-center md:text-left">
           Violet Cycle
         </h1>
       </div>
 
-      <div className="flex justify-center text-white">
+      <div className="text-white text-center md:text-left">
         <p>Violet Cycle, All rights reserved</p>
       </div>
 
-      <div className="flex flex-col">
-        <ul className="flex justify-center gap-5">
-          <li>
-            <Link
-              href="/"
-              className="text-white transition-all duration-200 hover:text-violet-200"
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/contacts"
-              className="text-white transition-all duration-200 hover:text-violet-200"
-            >
-              Contacts
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/register"
-              className="text-white transition-all duration-200 hover:text-violet-200"
-            >
-              Start now
-            </Link>
-          </li>
+      <div>
+        <ul className="flex flex-col md:flex-row md:gap-5 items-center">
+          <NavLink href="/" name="Home" />
+          <NavLink href="/contacts" name="Contacts" />
+          <NavLink href="/dashboard" name="Dashboard" />
         </ul>
       </div>
     </div>

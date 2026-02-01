@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import { ThemeModeScript } from "flowbite-react";
 
 const poppinsFont = Poppins({
   weight: ["400", "700"],
@@ -22,7 +21,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <ThemeModeScript />
       <body className={`${poppinsFont.variable} antialiased`}>
         {children}
       </body>
