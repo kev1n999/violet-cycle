@@ -1,3 +1,6 @@
+"use client";
+
+import { useRouter } from "next/navigation";
 import example from "../../assets/home/menstrual_example.png";
 import { Poppins } from "next/font/google";
 
@@ -9,6 +12,8 @@ const poppinsFont = Poppins({
 });
 
 export default function Main() {
+  const router = useRouter();
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 items-center px-6 md:px-0">
       <div className="flex justify-center py-10">
@@ -31,7 +36,9 @@ export default function Main() {
         </p>
 
         <div className="flex justify-center md:justify-start">
-          <button className="cursor-pointer bg-violet-600 w-40 md:w-50 h-12 rounded-[10px] text-white transition-colors hover:bg-violet-500">
+          <button
+            onClick={() => router.push("/dashboard")}
+            className="cursor-pointer bg-violet-600 w-40 md:w-50 h-12 rounded-[10px] text-white transition-colors hover:bg-violet-500">
             Start now
           </button>
         </div>
