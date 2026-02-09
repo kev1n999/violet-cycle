@@ -13,7 +13,9 @@ import {
 export function AppSidebar() {
   return (
     <Sidebar>
-      <SidebarHeader className="text-2xl text-violet-300 font-extrabold p-4 bg-violet-100">Violet Cycle Dashboard</SidebarHeader>
+      <SidebarHeader className="p-6 bg-violet-100">
+        <h1 className="text-2xl text-violet-500 font-extrabold">Violet Cycle Dashboard</h1>
+      </SidebarHeader>
       <div className="bg-violet-400 min-h-0.5"></div>
       <SidebarContent className="bg-violet-100">
         <SidebarGroup>
