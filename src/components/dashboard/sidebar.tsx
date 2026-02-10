@@ -1,4 +1,6 @@
 // components/app-sidebar.tsx
+import { NavItem } from "../navitem"
+import { User2 } from "lucide-react"
 import {
   Sidebar,
   SidebarContent,
@@ -7,8 +9,14 @@ import {
   SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
-  SidebarMenuItem,
+  useSidebar,
 } from "@/src/components/ui/sidebar"
+
+export function CustomTrigger() {
+  const { toggleSidebar } = useSidebar()
+
+  return <button onClick={toggleSidebar}>Toggle Sidebar</button>
+}
 
 export function AppSidebar() {
   return (
@@ -38,16 +46,4 @@ export function AppSidebar() {
       </SidebarFooter>
     </Sidebar>
   )
-}
-
-import { useSidebar } from "@/src/components/ui/sidebar"
-import { DropdownMenuItem } from "@radix-ui/react-dropdown-menu"
-import Link from "next/link"
-import { NavItem } from "../navitem"
-import { User2 } from "lucide-react"
-
-export function CustomTrigger() {
-  const { toggleSidebar } = useSidebar()
-
-  return <button onClick={toggleSidebar}>Toggle Sidebar</button>
 }
